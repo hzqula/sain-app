@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Test from "./pages/test";
 import ChatbotPage from "./pages/chatbot";
 import Botazel from "./pages/botazel";
 import Botaci from "./pages/botaci";
