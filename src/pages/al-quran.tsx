@@ -335,7 +335,7 @@ const AlQuranApp: React.FC = () => {
               </h2>
               <Button
                 onClick={() => setSidebarOpen(false)}
-                className="lg:hidden text-muted-foreground hover:text-foreground"
+                className="lg:hidden text-primary-foreground hover:text-foreground"
               >
                 <X className="w-5 h-5" />
               </Button>
@@ -377,12 +377,12 @@ const AlQuranApp: React.FC = () => {
                 <div className="flex items-center gap-4">
                   <Button
                     onClick={() => setSidebarOpen(true)}
-                    className="lg:hidden p-2 text-muted-foreground hover:text-foreground"
+                    className="lg:hidden p-2 text-primary-foreground hover:text-foreground"
                   >
                     <Menu className="w-5 h-5" />
                   </Button>
                   <div>
-                    <h1 className="font-heading text-2xl font-bold text-primary">
+                    <h1 className="font-heading text-lg md:text-2xl font-bold text-primary">
                       Al-Quran Digital
                     </h1>
                     <p className="text-sm text-muted-foreground">
@@ -466,15 +466,6 @@ const AlQuranApp: React.FC = () => {
               {!selectedSurah ? (
                 /* Welcome Screen */
                 <div className="max-w-4xl mx-auto text-center py-12">
-                  <div className="mb-8">
-                    <h1 className="font-heading text-5xl font-bold text-primary mb-4">
-                      Al-Quran Digital
-                    </h1>
-                    <p className="text-xl text-muted-foreground mb-2">
-                      القرآن الكريم
-                    </p>
-                  </div>
-
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
                     <div className="bg-card border border-secondary rounded-lg p-6">
                       <BookOpen className="w-8 h-8 text-primary mx-auto mb-3" />
