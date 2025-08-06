@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { AiOutlineInstagram, AiOutlineTikTok } from "react-icons/ai";
+import logo from "../assets/logo.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,8 +12,9 @@ const Header = () => {
 
   return (
     <header className="bg-white flex justify-center h-20 items-center sticky top-0 z-50 border-b border-primary">
-      <div className="flex items-center justify-center w-1/2 md:w-2/5">
-        <h1 className="ml-4 md:ml-4 font-heading text-primary font-black text-lg md:text-2xl ">
+      <div className="ml-4 md:ml-4 flex gap-4 items-center justify-center w-3/5 md:w-2/5">
+        <img src={logo} alt="" className="w-12 h-12" />
+        <h1 className="font-heading text-primary font-black text-base md:text-2xl ">
           <a href="/">KKN Desa Simpang Ayam 25 USR</a>
         </h1>
       </div>
