@@ -3,17 +3,20 @@ import Test from "./pages/test";
 import ChatbotPage from "./pages/chatbot";
 import Botazel from "./pages/botazel";
 import Botaci from "./pages/botaci";
+import AlQuran from "./pages/al-quran";
+import Landing from "./pages/landing";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Test />} />
+          <Route path="/" element={<Landing />} />
           <Route path="/chatbot" element={<ChatbotPage />} />
           <Route path="/chatbot/botazel" element={<Botazel />} />
           <Route path="/chatbot/botaci" element={<Botaci />} />
           <Route path="/chatbot/botazel" element={<Botazel />} />
+          <Route path="/al-quran" element={<AlQuran />} />
         </Routes>
       </BrowserRouter>
     </>
