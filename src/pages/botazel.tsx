@@ -194,27 +194,27 @@ const Botazel = () => {
                   {/* Quick Start Cards */}
                   <div className="grid grid-cols-2 lg:grid-cols-2 gap-2 md:gap-4 max-w-2xl mb-4 md:mb-8 w-full">
                     <div className="bg-white/70 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 border border-purple-200">
-                      <div className="text-lg md:text-2xl mb-1 md:mb-2">💡</div>
+                      <div className="text-lg md:text-2xl mb-1 md:mb-2">🧠</div>
                       <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-purple-600">
-                        Tanya tentang gizi balita
+                        Konsultasi stres dan kecemasan
                       </p>
                     </div>
                     <div className="bg-white/70 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 border border-purple-200">
-                      <div className="text-lg md:text-2xl mb-1 md:mb-2">🤱</div>
+                      <div className="text-lg md:text-2xl mb-1 md:mb-2">🗣️</div>
                       <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-purple-600">
-                        Nutrisi ibu hamil
+                        Tips komunikasi efektif
                       </p>
                     </div>
                     <div className="bg-white/70 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 border border-purple-200">
-                      <div className="text-lg md:text-2xl mb-1 md:mb-2">🥗</div>
+                      <div className="text-lg md:text-2xl mb-1 md:mb-2">👶</div>
                       <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-purple-600">
-                        Menu makanan sehat
+                        Psikologi anak & remaja
                       </p>
                     </div>
                     <div className="bg-white/70 backdrop-blur-sm rounded-lg md:rounded-xl p-2 md:p-4 border border-purple-200">
-                      <div className="text-lg md:text-2xl mb-1 md:mb-2">📊</div>
+                      <div className="text-lg md:text-2xl mb-1 md:mb-2">💬</div>
                       <p className="text-xs md:text-sm font-medium text-muted-foreground group-hover:text-purple-600">
-                        Status gizi desa
+                        Konseling hubungan & keluarga
                       </p>
                     </div>
                   </div>
