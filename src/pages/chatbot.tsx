@@ -41,7 +41,7 @@ const ChatbotPage = () => {
                 Botazel
               </CardTitle>
               <CardDescription className="text-sm text-justify">
-                Chatbot-nya Kak Zelda (Mahasiswa Psikologi) yang akan siap
+                Chatbot-nya Kak Zelda (Mahasiswi Psikologi) yang akan siap
                 membantumu konsultasi kesehatan mental, manajemen stres, dan
                 informasi <span className="italic">bullying</span>.
               </CardDescription>
@@ -88,7 +88,7 @@ const ChatbotPage = () => {
                 Botaci
               </CardTitle>
               <CardDescription className="text-sm text-justify">
-                Chatbot-nya Kak Aci (Mahasiswa Gizi) yang akan siap membantumu
+                Chatbot-nya Kak Aci (Mahasiswi Gizi) yang akan siap membantumu
                 konsultasi informasi gizi, pola makan, asupan nutrisi, dan{" "}
                 <span className="italic">stunting</span> di Desa Simpang Ayam.
               </CardDescription>
