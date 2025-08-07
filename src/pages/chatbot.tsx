@@ -18,7 +18,7 @@ const ChatbotPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-[80vh] py-6 sm:py-8 lg:py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-[80vh] py-6 sm:py-8 lg:py-10 px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="w-full max-w-6xl mx-auto items-center mb-8 sm:mb-10 lg:mb-12 flex flex-col justify-center">
           <Bot className="h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24 mb-3 sm:mb-4 text-blue-600" />
