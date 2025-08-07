@@ -14,6 +14,17 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
+import { Separator } from "@/components/ui/separator";
 
 interface Ayat {
   nomorAyat: number;
@@ -280,19 +291,16 @@ const AlQuranApp: React.FC = () => {
           </p>
         </div>
 
-        <div className="border-t border-border pt-4">
-          <p className="text-foreground leading-relaxed">
-            {ayat.teksIndonesia}
-          </p>
-        </div>
+        <Separator />
+        <p className="text-foreground leading-relaxed">{ayat.teksIndonesia}</p>
       </div>
     </div>
   );
 
   if (loading) {
     return (
-      <div className="min-h-[90vh] bg-background flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-[100vh] flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin mb-4"></div>
           <p className="text-muted-foreground">Memuat Al-Quran...</p>
         </div>
@@ -320,7 +328,7 @@ const AlQuranApp: React.FC = () => {
   return (
     <>
       <Header />
-      <div className="h-[90vh] bg-background flex overflow-hidden">
+      <div className="h-[91vh] flex overflow-hidden">
         {/* Sidebar */}
         <div
           className={`fixed inset-y-0 left-0 z-50 w-80 bg-card border-r border-border transform transition-transform duration-300 ease-in-out ${
@@ -344,12 +352,12 @@ const AlQuranApp: React.FC = () => {
             {/* Search in Sidebar */}
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
-              <input
+              <Input
                 type="text"
                 placeholder="Cari surah..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-9 pr-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent text-sm"
+                className="w-full pl-9 pr-3 py-2"
               />
             </div>
           </div>
@@ -393,41 +401,38 @@ const AlQuranApp: React.FC = () => {
 
                 {/* Controls */}
                 {selectedSurah && (
-                  <div className="flex items-center gap-4">
-                    {/* Auto Play Toggle */}
+                  <div className="hidden md:flex items-center gap-4">
                     <div className="flex items-center gap-2">
-                      <label className="flex items-center gap-2 text-sm cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={autoPlay}
-                          onChange={(e) => setAutoPlay(e.target.checked)}
-                          className="w-4 h-4 rounded border-input text-primary focus:ring-2 focus:ring-ring"
-                        />
-                        <span className="text-muted-foreground">
-                          Putar Otomatis
-                        </span>
-                      </label>
+                      <Switch
+                        id="autoplay"
+                        checked={autoPlay}
+                        onCheckedChange={setAutoPlay}
+                      />
+                      <Label htmlFor="autoplay" className="text-sm">
+                        Putar Otomatis
+                      </Label>
                     </div>
 
-                    {/* Qari Selector */}
                     <div className="flex items-center gap-2">
-                      <label className="text-sm font-medium text-muted-foreground">
-                        Qari:
-                      </label>
-                      <select
+                      <Label className="text-sm">Qari:</Label>
+                      <Select
                         value={selectedQari}
-                        onChange={(e) => {
+                        onValueChange={(value) => {
                           stopAudio();
-                          setSelectedQari(e.target.value);
+                          setSelectedQari(value);
                         }}
-                        className="px-3 py-2 bg-background border border-input rounded-md focus:outline-none focus:ring-2 focus:ring-ring text-sm"
                       >
-                        {qariList.map((qari) => (
-                          <option key={qari.id} value={qari.id}>
-                            {qari.name}
-                          </option>
-                        ))}
-                      </select>
+                        <SelectTrigger className="w-40">
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {qariList.map((qari) => (
+                            <SelectItem key={qari.id} value={qari.id}>
+                              {qari.name}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
                 )}
@@ -502,41 +507,35 @@ const AlQuranApp: React.FC = () => {
                 /* Surah Content */
                 <div className="max-w-4xl mx-auto">
                   {/* Surah Header */}
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-border rounded-xl p-8 mb-8">
+                  <div className="bg-primary border border-border rounded-xl p-8 mb-8">
                     <div className="text-center">
-                      <h1 className="font-heading text-4xl font-bold text-primary mb-2">
-                        {selectedSurah.namaLatin}
+                      <h1 className="font-heading text-xl md:text-4xl font-bold text-secondary mb-2">
+                        {selectedSurah.namaLatin} ({selectedSurah.arti})
                       </h1>
-                      <p className="text-5xl font-arabic text-primary mb-4">
+                      <p className="text-2xl md:text-5xl font-arabic text-secondary mb-4">
                         {selectedSurah.nama}
-                      </p>
-                      <p className="text-xl text-muted-foreground mb-6">
-                        {selectedSurah.arti}
                       </p>
 
                       <div className="flex items-center justify-center gap-6 text-sm text-muted-foreground mb-6">
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-col md:flex-row items-center gap-1 text-primary-foreground">
                           <BookOpen className="w-4 h-4" />
                           <span>Surah ke-{selectedSurah.nomor}</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-col md:flex-row items-center gap-1 text-primary-foreground">
                           <Hash className="w-4 h-4" />
                           <span>{selectedSurah.jumlahAyat} ayat</span>
                         </div>
-                        <div className="flex items-center gap-1">
+                        <div className="flex flex-col md:flex-row items-center gap-1 text-primary-foreground">
                           <MapPin className="w-4 h-4" />
                           <span>{selectedSurah.tempatTurun}</span>
                         </div>
                       </div>
-
-                      <div className="bg-card/50 rounded-lg p-4">
-                        <p
-                          className="text-muted-foreground leading-relaxed text-justify"
-                          dangerouslySetInnerHTML={{
-                            __html: selectedSurah.deskripsi,
-                          }}
-                        />
-                      </div>
+                      <p
+                        className="text-primary-foreground text-xs md:text-sm leading-relaxed text-justify font-extralight"
+                        dangerouslySetInnerHTML={{
+                          __html: selectedSurah.deskripsi,
+                        }}
+                      />
                     </div>
                   </div>
 
@@ -548,7 +547,7 @@ const AlQuranApp: React.FC = () => {
                         goToSurah(selectedSurah.suratSebelumnya.nomor)
                       }
                       disabled={!selectedSurah.suratSebelumnya}
-                      className="bg-secondary hover:bg-secondary/80"
+                      className="bg-secondary hover:bg-secondary/80 text-xs"
                     >
                       <ChevronLeft className="w-4 h-4" />
                       {selectedSurah.suratSebelumnya
@@ -568,7 +567,7 @@ const AlQuranApp: React.FC = () => {
                         goToSurah(selectedSurah.suratSelanjutnya.nomor)
                       }
                       disabled={!selectedSurah.suratSelanjutnya}
-                      className="bg-secondary hover:bg-secondary/80"
+                      className="bg-secondary hover:bg-secondary/80 text-xs"
                     >
                       {selectedSurah.suratSelanjutnya
                         ? selectedSurah.suratSelanjutnya.namaLatin
