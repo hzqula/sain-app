@@ -15,7 +15,7 @@ const Header = () => {
       <div className="ml-4 md:ml-4 flex gap-4 items-center justify-center w-3/5 md:w-2/5">
         <img src={logo} alt="" className="w-12 h-12" />
         <h1 className="font-heading text-primary font-black text-base md:text-2xl ">
-          <a href="/">KKN Desa Simpang Ayam 25 USR</a>
+          <a href="/">KKN Simpang Ayam 25 USR</a>
         </h1>
       </div>
 
