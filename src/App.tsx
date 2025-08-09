@@ -4,6 +4,7 @@ import Botazel from "./pages/botazel";
 import Botaci from "./pages/botaci";
 import AlQuran from "./pages/al-quran";
 import Landing from "./pages/landing";
+import Botain from "./pages/botain";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/chatbot/botazel" element={<Botazel />} />
           <Route path="/chatbot/botaci" element={<Botaci />} />
           <Route path="/chatbot/botazel" element={<Botazel />} />
+          <Route path="/chatbot/botain" element={<Botain />} />
           <Route path="/al-quran" element={<AlQuran />} />
         </Routes>
       </BrowserRouter>
