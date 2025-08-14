@@ -241,7 +241,7 @@ export const programs: Program[] = [
     ownerIds: ["m9"],
     date: "Agustus 2025",
     status: "Selesai",
-    categories: ["Agama", "Teknologi"],
+    categories: ["Keagamaan", "Teknologi"],
   },
 ];
 
