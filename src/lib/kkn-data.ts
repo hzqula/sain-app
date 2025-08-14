@@ -24,7 +24,7 @@ export type Program = {
   ownerIds: string[];
   date: string;
   status: "Selesai" | "Sedang Berlangsung" | "Akan Datang";
-  category: string;
+  categories: string[];
 };
 
 export type GalleryImage = {
@@ -118,7 +118,7 @@ export const members: Member[] = [
   },
   {
     id: "m11",
-    name: "Nuradhifa Ismawinda",
+    name: "Nurashifa Ismawinda",
     role: "Publikasi, Dokumentasi, dan Desain",
     major: "Gizi",
     university: "Fakultas Pertanian dan Peternakan",
@@ -156,60 +156,92 @@ export const locations: Location[] = [
 ];
 
 export const programCategories = [
-  "Education",
-  "Health",
-  "Environment",
-  "Economy",
+  "Edukasi",
+  "Kesehatan",
+  "Pertanian",
+  "Ekonomi",
 ];
 
 export const programs: Program[] = [
   {
     id: "p1",
     title: "Sosialisasi Bijak dalam Menggunakan Media Sosial",
-    ownerIds: ["m8", "m2"], // Multiple owners
-    date: "July, 2025",
+    ownerIds: ["m8", "m2"],
+    date: "Juli 2025",
     status: "Selesai",
-    category: "Education",
+    categories: ["Edukasi"],
   },
   {
     id: "p2",
     title: "Sosialisasi Menabung Sejak Dini",
-    ownerIds: ["m3"], // Multiple owners
-    date: "Aug, 2025",
+    ownerIds: ["m3"],
+    date: "Agustus 2025",
     status: "Selesai",
-    category: "Education",
+    categories: ["Edukasi", "Ekonomi"],
   },
   {
     id: "p3",
     title: "Sosialisasi Gizi",
-    ownerIds: ["m11"], // Multiple owners
-    date: "Aug, 2025",
+    ownerIds: ["m11"],
+    date: "Agustus 2025",
     status: "Selesai",
-    category: "Health",
+    categories: ["Edukasi", "Kesehatan"],
   },
   {
     id: "p4",
     title: "Maghrib Mengaji",
-    ownerIds: ["m9"], // Multiple owners
-    date: "Aug, 2025",
+    ownerIds: ["m9"],
+    date: "Agustus 2025",
     status: "Sedang Berlangsung",
-    category: "Health",
+    categories: ["Keagamaan"],
   },
   {
     id: "p5",
     title: "Digitalisasi UMKM dengan QRIS",
-    ownerIds: ["m6"], // Multiple owners
-    date: "Aug, 2025",
+    ownerIds: ["m6"],
+    date: "Agustus 2025",
     status: "Akan Datang",
-    category: "Economy",
+    categories: ["Ekonomi"],
   },
   {
     id: "p6",
     title: "Penanaman Bibit Toga",
-    ownerIds: ["m4"], // Multiple owners
-    date: "Aug, 2025",
-    status: "Akan Datang",
-    category: "Environment",
+    ownerIds: ["m4"],
+    date: "Agustus 2025",
+    status: "Selesai",
+    categories: ["Pertanian"],
+  },
+  {
+    id: "p7",
+    title: "Sosialisasi Anti Bullying",
+    ownerIds: ["m7"],
+    date: "Agustus 2025",
+    status: "Selesai",
+    categories: ["Pertanian"],
+  },
+  {
+    id: "p8",
+    title: "Chatbot Gizi (Botaci)",
+    ownerIds: ["m11"],
+    date: "Agustus 2025",
+    status: "Selesai",
+    categories: ["Kesehatan", "Teknologi"],
+  },
+  {
+    id: "p9",
+    title: "Chatbot Psikologi (Botazel)",
+    ownerIds: ["m7"],
+    date: "Agustus 2025",
+    status: "Selesai",
+    categories: ["Psikologi", "Teknologi"],
+  },
+  {
+    id: "p10",
+    title: "Chatbot Tajwid (Botain)",
+    ownerIds: ["m9"],
+    date: "Agustus 2025",
+    status: "Selesai",
+    categories: ["Psikologi", "Teknologi"],
   },
 ];
 
